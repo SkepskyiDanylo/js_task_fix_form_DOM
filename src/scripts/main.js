@@ -13,7 +13,11 @@ for (const form of [...forms]) {
       label.setAttribute('for', input.getAttribute('id'));
       div.prepend(label);
 
-      input.setAttribute('placeholder', input.getAttribute('name'));
+      const inputName = input.getAttribute('name');
+      const capitalized =
+        inputName.charAt(0).toUpperCase() + inputName.slice(1);
+
+      input.setAttribute('placeholder', capitalized);
     }
   }
 }
